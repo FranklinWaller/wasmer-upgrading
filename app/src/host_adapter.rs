@@ -17,6 +17,6 @@ impl HostAdapter for VmAdapter {
         dbg!(&response);
         let bytes = response.bytes().await?;
 
-        Ok(String::from_utf8_lossy(&bytes.to_vec()).to_string())
+        Ok(String::from_utf8_lossy(&bytes).to_string())
     }
 }

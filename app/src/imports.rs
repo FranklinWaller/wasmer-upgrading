@@ -4,7 +4,8 @@ use wasmer_wasix::WasiEnv;
 
 use crate::host_adapter::HostAdapter;
 use wasmer::{
-    imports, AsStoreRef, Function, FunctionEnv, FunctionEnvMut, Imports, Memory, MemoryView, Store, WasmPtr,
+    imports, AsStoreRef, Function, FunctionEnv, FunctionEnvMut, Imports, Memory, MemoryView, Store,
+    WasmPtr,
 };
 
 use wasmer_wasix::runtime::task_manager::VirtualTaskManagerExt;
@@ -78,7 +79,7 @@ pub fn http_fetch_import_obj(
             let memory = ctx.memory_view(&env);
             let wasi_env = ctx.wasi_env.as_ref(&env);
             let action_raw = action_ptr.slice(&memory, action_length)?.read_to_bytes()?;
-            let url = String::from_utf8((&action_raw).to_vec())?;
+            let url = String::from_utf8(action_raw.to_vec())?;
             let ha_clone = host_adapter.clone();
 
             let result: String = wasi_env
