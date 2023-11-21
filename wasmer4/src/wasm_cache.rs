@@ -5,7 +5,7 @@ use wasmer::{Module, Store};
 use crate::errors::Result;
 
 pub const RESOURCES_HOME_DIR: &str = "./";
-pub const WASM_CACHE_FOLDER_NAME: &str = "wasm_cache";
+pub const WASM_CACHE_FOLDER_NAME: &str = "wasm_cache_v4";
 
 pub fn wasm_cache_id<T: AsRef<[u8]>>(wasm_binary: T) -> String {
     let mut hash = Keccak256::new();

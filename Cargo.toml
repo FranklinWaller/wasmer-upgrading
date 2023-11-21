@@ -1,11 +1,10 @@
-cargo-features = ["per-package-target"]
-
 [workspace]
 resolver = "2"
-default-members = ["app"]
+default-members = ["wasmer4"]
 members = [
-    "app",
-    "wasm"
+    "wasmer4",
+    "wasm",
+    "wasmer3"
 ]
 
 [workspace.package]

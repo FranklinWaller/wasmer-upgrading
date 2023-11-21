@@ -12,6 +12,9 @@ mod worker;
 fn main() -> anyhow::Result<()> {
     let system = System::new();
 
+    println!("Warm up run");
+    vm_manual::run_vm().unwrap();
+
     system.block_on(async {
         let app = App::new();
         app.start();

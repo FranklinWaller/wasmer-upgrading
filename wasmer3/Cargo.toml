@@ -1,5 +1,5 @@
 [package]
-name = "app"
+name = "wasmer3"
 version.workspace = true
 edition = "2021"
 rust-version.workspace = true
@@ -9,8 +9,12 @@ async-trait = { workspace = true }
 actix = { workspace = true }
 anyhow = { workspace = true }
 tokio = { workspace = true }
-wasmer = { workspace = true }
-wasmer-wasix = { workspace = true }
+
+# wasmer 3.3.0
+wasmer = { git = "https://github.com/wasmerio/wasmer.git", rev = "3c7c4a803e59d380ea969baa3f032598e41a1bcb", default-features = true }
+wasmer-wasix = { git = "https://github.com/wasmerio/wasmer.git", rev = "3c7c4a803e59d380ea969baa3f032598e41a1bcb", default-features = true }
+
+
 serde = { workspace = true }
 serde_json = { workspace = true }
 reqwest = { workspace = true }
